@@ -111,7 +111,7 @@ Endpoints
 - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
 - Request parameters: None
 - Returns: the categories object, success value and total number of categories
-
+```bash
 "categories": {
     "1": "Science",
     "2": "Art",
@@ -123,7 +123,7 @@ Endpoints
   "success": true,
   "total_categories": 6
 }
-
+```
 
 
 'GET 'http://127.0.0.1:5000/questions''
@@ -132,7 +132,7 @@ Endpoints
 - Request parameters: None
 - Returns: the categories and questions objects, success value and total number of questions 
 
-
+```bash
  "categories": {
     "1": "Science",
     "2": "Art",
@@ -216,6 +216,8 @@ Endpoints
   "success": true,
   "total_questions": 20
 }
+```
+
 
 
 'DELETE 'http://127.0.0.1:5000/questions/id''
@@ -223,19 +225,19 @@ Endpoints
 - Deletes a item of questions dictionary through question id 
 - Request parameters: id 
 - Returns: a total number of questions, id of question deleted and success value
-
+```bash
 Sample: curl -X DELETE http://127.0.0.1:5000/questions/77
  
  "TotalQuestions": 19,
   "deleted": 77,
   "success": true
-
+```
 'POST 'http://127.0.0.1:5000/questions''
 
 - Adds a new question using the question, answer, category, difficulty parameters 
 - Request parameters: None
 - Returns: a total number of questions, id of question added, questions object and success value
-
+```bash
 Sample: curl -X POST -H "Content-Type: application/json" -d '{"question":"Who is Lebron James", "answer":"basketball player of NBA", "category":"6","difficulty":1}' http://127.0.0.1:5000/questions?page=2
 
  "TotalQuestions": 20,
@@ -313,13 +315,13 @@ Sample: curl -X POST -H "Content-Type: application/json" -d '{"question":"Who is
     }
   ],
   "success": true
-
+```
 'POST 'http://127.0.0.1:5000/questions/searchTerm''
 
 - Searches the corresponding term at a question and displays the different questions which have this term 
 - Request parameters: searchTerm
 - Returns: the questions object, success value and total number of questions
-
+```bash
 Sample: curl -X POST -H "Content-Type: application/json" -d '{"searchTerm":"what"}' http://127.0.0.1:5000/questions/searchTerm
 
  "questions": [
@@ -376,13 +378,13 @@ Sample: curl -X POST -H "Content-Type: application/json" -d '{"searchTerm":"what
   "success": true,
   "totalQuestions": 20
 }
-
+```
 'GET 'http://127.0.0.1:5000/categories/id/questions''
 
 - Retrieves the id of a category and displays the corresponding questions at this one
 - Request parameters: id
 - Returns: the questions object, success value and total number of questions 
-
+```bash
 Sample: curl http://127.0.0.1:5000/categories/1/questions
 
   "questions": [
@@ -411,13 +413,13 @@ Sample: curl http://127.0.0.1:5000/categories/1/questions
   "success": true,
   "totalQuestions": 20
 }
-
+```
 'POST 'http://127.0.0.1:5000/quizzes''
 
 - Plays a quiz game in  each category or all the categories in which it displays a random question 
 - Request parameters: None
 - Returns: a question object and success value  
-
+```bash
 Sample: curl -X POST -H "Content-Type: application/json" -d '{"previous_questions":[],"quiz_category": {"type":"Science", "id":1}}' http://127.0.0.1:5000/quizzes
 
    "question": {
@@ -429,7 +431,7 @@ Sample: curl -X POST -H "Content-Type: application/json" -d '{"previous_question
   },
   "success": true
 }
-
+```
 
 
 
